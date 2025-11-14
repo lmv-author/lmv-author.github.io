@@ -3,7 +3,7 @@
 ========================= */
 body {
   font-family: 'Merriweather', serif;
-  background-color: #FFF8F0; /* light ivory for content */
+  background-color: #FFF8F0; /* scrollable content background */
   color: #222222;
   line-height: 1.8;
   margin: 0;
@@ -20,7 +20,7 @@ body {
   width: 100%;
   background-color: #F5F0E6; /* pastel beige */
   display: flex;
-  flex-direction: column; /* stack logo and navbar */
+  flex-direction: column; /* stack logo and navbar vertically */
   align-items: center;
   padding: 0.5rem 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -31,7 +31,7 @@ body {
 .site-header .logo {
   display: flex;
   align-items: center;
-  margin-bottom: 0.3rem; /* spacing between logo and navbar */
+  margin-bottom: 0.5rem; /* space between logo and navbar */
 }
 
 .site-header .logo h1 {
@@ -49,18 +49,20 @@ body {
 /* Navbar - horizontal below logo */
 .navbar {
   display: flex;
+  justify-content: center; /* center links below logo */
   gap: 1.5rem;
+  flex-wrap: wrap; /* wrap on small screens */
 }
 
 .navbar a {
   text-decoration: none;
-  color: #4A7C59; /* muted green */
+  color: #4A7C59;
   font-weight: 500;
   font-size: 1rem;
 }
 
 .navbar a:hover {
-  color: #B89B6D; /* muted gold */
+  color: #B89B6D;
   text-decoration: underline;
 }
 
