@@ -21,12 +21,18 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #F5F0E6; /* pastel beige */
+  height: 110px; /* adjust as needed */
   display: flex;
   flex-direction: column; /* stack logo and navbar vertically */
   align-items: center;
-  padding: 0.5rem 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  justify-content: center;
+  background-color: #1a1a1a; /* dark header color */
+  /* Optional: if you want an image, comment above and use:
+     background-image: url('assets/ebony.jpg');
+     background-size: cover;
+     background-position: center; */
+  color: #F5F0E6; /* light text color */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   z-index: 1000;
 }
 
@@ -34,40 +40,40 @@ body {
 .site-header .logo {
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem; /* space between logo and navbar */
+  margin-bottom: 0.5rem;
 }
 
 .site-header .logo h1 {
-  margin-left: 0.7rem; /* slightly more space for longer text */
+  margin-left: 0.7rem;
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
-  color: #F5F0E6; /* light text for dark header */
-  white-space: nowrap; /* prevent text wrapping on desktop */
+  color: #F5F0E6; /* light text */
+  white-space: nowrap;
 }
 
 .flower-icon {
-  width: 40px; /* slightly bigger for visual balance */
+  width: 40px;
   height: auto;
-  filter: brightness(0) invert(1); /* make visible on dark header */
+  filter: brightness(0) invert(1); /* makes it visible on dark header */
 }
 
 /* Navbar - horizontal below logo */
 .navbar {
   display: flex;
-  justify-content: center; /* center links below logo */
+  justify-content: center;
   gap: 1.5rem;
-  flex-wrap: wrap; /* wrap on small screens */
+  flex-wrap: wrap;
 }
 
 .navbar a {
   text-decoration: none;
-  color: #4A7C59;
+  color: #F5F0E6; /* light text for dark header */
   font-weight: 500;
   font-size: 1rem;
 }
 
 .navbar a:hover {
-  color: #B89B6D;
+  color: #FFDFAE; /* soft gold hover */
   text-decoration: underline;
 }
 
