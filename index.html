@@ -1,139 +1,57 @@
-/* =========================
-   Base Styles
-========================= */
-body {
-  font-family: 'Merriweather', serif;
-  background-image: url('assets/parchment.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: #222222;
-  line-height: 1.8;
-  margin: 0;
-  padding-top: 130px; /* space for header */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lara Mac Veeameroi – Author</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
 
-/* =========================
-   Header - Fixed Top Bar
-========================= */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 130px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #1a1a1a;
-  color: #F5F0E6;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  z-index: 1000;
-  padding: 0.5rem 1rem;
-}
+<!-- Fixed Header -->
+<header class="site-header">
+  <div class="logo">
+    <img src="assets/flower.jpg" alt="flower" class="flower-icon">
+    <h1>Lara Mac Veeameroi – Author</h1>
+  </div>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="poems/">Poems</a>
+    <a href="short-stories/">Short Stories</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-/* Logo & Flower */
-.site-header .logo {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
+<!-- Main Content -->
+<main>
+  <section class="intro">
+    <p>Welcome to the official website of Lara Mac Veeameroi — poet, writer, and thinker.</p>
+  </section>
 
-.site-header .logo h1 {
-  margin-left: 0.7rem;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.9rem;
-  color: #F5F0E6;
-  white-space: nowrap;
-}
+  <section class="latest-poems">
+    <h2>Latest Poems</h2>
+    <ul>
+      <li><a href="poems/poem1.html">Poem One</a></li>
+      <li><a href="poems/poem2.html">Poem Two</a></li>
+    </ul>
+  </section>
 
-.flower-icon {
-  width: 45px;
-  height: auto;
-  filter: brightness(0) invert(1);
-}
+  <section class="short-stories">
+    <h2>Latest Short Stories</h2>
+    <ul>
+      <li><a href="short-stories/story1.html">Story One</a></li>
+      <li><a href="short-stories/story2.html">Story Two</a></li>
+    </ul>
+  </section>
+</main>
 
-/* Navbar - horizontal below logo */
-.navbar {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
+<!-- Footer -->
+<footer>
+  <p>Follow Lara Mac Veeameroi on <a href="https://instagram.com/lmv.author" target="_blank">Instagram</a> | Contact: <a href="mailto:lmv.author@proton.me">lmv.author@proton.me</a></p>
+  <p>This site was created with the assistance of ChatGPT 5</p>
+</footer>
 
-.navbar a {
-  text-decoration: none;
-  color: #F5F0E6;
-  font-weight: 500;
-  font-size: 1rem;
-}
+</body>
+</html>
 
-.navbar a:hover {
-  color: #FFDFAE;
-  text-decoration: underline;
-}
-
-/* =========================
-   Main Content
-========================= */
-main {
-  max-width: 750px;
-  margin: 2rem auto;
-  padding: 2rem 1rem;
-  background-color: rgba(255, 248, 240, 0.95); /* semi-transparent */
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-section {
-  margin-bottom: 3rem;
-}
-
-h2 {
-  color: #4A7C59;
-  margin-bottom: 1rem;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-ul li {
-  margin: 0.5rem 0;
-}
-
-/* =========================
-   Footer
-========================= */
-footer {
-  text-align: center;
-  margin: 3rem 0;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-footer a {
-  color: #B89B6D;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* =========================
-   Responsive - Mobile
-========================= */
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    gap: 0.8rem;
-    align-items: center;
-  }
-
-  .site-header {
-    padding: 0.5rem 1rem;
-  }
-}
