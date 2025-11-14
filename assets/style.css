@@ -56,7 +56,8 @@ body {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* wrap on small screens */
+  margin-bottom: 0.5rem; /* add space between navbar and bottom of header */
 }
 
 .navbar a {
