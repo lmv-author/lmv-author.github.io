@@ -1,14 +1,18 @@
-/* Base Styles */
+/* =========================
+   Base Styles
+========================= */
 body {
   font-family: 'Merriweather', serif;
-  background-color: #FFF8F0; /* different from header */
+  background-color: #FFF8F0; /* light ivory for content */
   color: #222222;
   line-height: 1.8;
   margin: 0;
-  padding-top: 70px; /* space for fixed header */
+  padding-top: 110px; /* space for stacked fixed header */
 }
 
-/* Fixed Header */
+/* =========================
+   Header - Fixed Top Bar
+========================= */
 .site-header {
   position: fixed;
   top: 0;
@@ -16,18 +20,18 @@ body {
   width: 100%;
   background-color: #F5F0E6; /* pastel beige */
   display: flex;
-  flex-direction: column; /* stack logo and nav vertically */
+  flex-direction: column; /* stack logo and navbar */
   align-items: center;
   padding: 0.5rem 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   z-index: 1000;
 }
 
-/* Logo styling remains */
+/* Logo & Flower */
 .site-header .logo {
   display: flex;
   align-items: center;
-  margin-bottom: 0.3rem; /* space between logo and nav */
+  margin-bottom: 0.3rem; /* spacing between logo and navbar */
 }
 
 .site-header .logo h1 {
@@ -35,6 +39,11 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
   color: #222222;
+}
+
+.flower-icon {
+  width: 35px;
+  height: auto;
 }
 
 /* Navbar - horizontal below logo */
@@ -45,22 +54,19 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: #4A7C59;
+  color: #4A7C59; /* muted green */
   font-weight: 500;
   font-size: 1rem;
 }
 
 .navbar a:hover {
-  color: #B89B6D;
+  color: #B89B6D; /* muted gold */
   text-decoration: underline;
 }
 
-/* Push main content down so header doesn't overlap */
-body {
-  padding-top: 110px; /* adjust depending on stacked header height */
-}
-
-/* Main Content */
+/* =========================
+   Main Content
+========================= */
 main {
   max-width: 750px;
   margin: 2rem auto;
@@ -86,7 +92,9 @@ ul li {
   margin: 0.5rem 0;
 }
 
-/* Footer */
+/* =========================
+   Footer
+========================= */
 footer {
   text-align: center;
   margin: 3rem 0;
@@ -101,4 +109,19 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* =========================
+   Responsive - Mobile
+========================= */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .site-header {
+    padding: 0.5rem 1rem;
+  }
 }
