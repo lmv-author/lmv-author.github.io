@@ -35,15 +35,17 @@ body {
 }
 
 .site-header .logo h1 {
-  margin-left: 0.5rem;
+  margin-left: 0.7rem; /* slightly more space for longer text */
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
-  color: #222222;
+  color: #F5F0E6; /* light text for dark header */
+  white-space: nowrap; /* prevent text wrapping on desktop */
 }
 
 .flower-icon {
-  width: 35px;
+  width: 40px; /* slightly bigger for visual balance */
   height: auto;
+  filter: brightness(0) invert(1); /* make visible on dark header */
 }
 
 /* Navbar - horizontal below logo */
