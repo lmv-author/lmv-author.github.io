@@ -3,14 +3,14 @@
 ========================= */
 body {
   font-family: 'Merriweather', serif;
-  background-image: url('assets/parchment.jpg'); /* make sure the filename is correct */
-  background-size: cover;       /* make image cover the whole page */
+  background-image: url('assets/parchment.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* keeps texture fixed while scrolling */
+  background-attachment: fixed;
   color: #222222;
   line-height: 1.8;
   margin: 0;
-  padding-top: 110px; /* space for fixed header */
+  padding-top: 130px; /* space for header */
 }
 
 /* =========================
@@ -21,19 +21,16 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 110px; /* adjust as needed */
+  height: 130px;
   display: flex;
-  flex-direction: column; /* stack logo and navbar vertically */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #1a1a1a; /* dark header color */
-  /* Optional: if you want an image, comment above and use:
-     background-image: url('assets/ebony.jpg');
-     background-size: cover;
-     background-position: center; */
-  color: #F5F0E6; /* light text color */
+  background-color: #1a1a1a;
+  color: #F5F0E6;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   z-index: 1000;
+  padding: 0.5rem 1rem;
 }
 
 /* Logo & Flower */
@@ -46,15 +43,15 @@ body {
 .site-header .logo h1 {
   margin-left: 0.7rem;
   font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  color: #F5F0E6; /* light text */
+  font-size: 1.9rem;
+  color: #F5F0E6;
   white-space: nowrap;
 }
 
 .flower-icon {
-  width: 40px;
+  width: 45px;
   height: auto;
-  filter: brightness(0) invert(1); /* makes it visible on dark header */
+  filter: brightness(0) invert(1);
 }
 
 /* Navbar - horizontal below logo */
@@ -67,13 +64,13 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: #F5F0E6; /* light text for dark header */
+  color: #F5F0E6;
   font-weight: 500;
   font-size: 1rem;
 }
 
 .navbar a:hover {
-  color: #FFDFAE; /* soft gold hover */
+  color: #FFDFAE;
   text-decoration: underline;
 }
 
@@ -83,7 +80,10 @@ body {
 main {
   max-width: 750px;
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 2rem 1rem;
+  background-color: rgba(255, 248, 240, 0.95); /* semi-transparent */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 section {
@@ -95,7 +95,6 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* Lists */
 ul {
   list-style-type: none;
   padding: 0;
@@ -138,3 +137,4 @@ footer a:hover {
     padding: 0.5rem 1rem;
   }
 }
+
