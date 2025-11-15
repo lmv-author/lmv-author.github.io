@@ -23,7 +23,7 @@
 <!-- Main Content -->
 <main>
   <section class="intro">
-    <p>Welcome to the poems archive. Use the filters to explore by year or language. Each poem can be shared individually.</p>
+    <p>Welcome to the poems archive. Use the filters to explore by year or language.</p>
   </section>
 
   <!-- Filters -->
@@ -217,16 +217,6 @@ window.addEventListener('load', ()=>{
 
 // Initial filter
 applyFilters();
-
-// Build Table of Contents
-poems.forEach(p => {
-  const li = document.createElement('li');
-  const a = document.createElement('a');
-  a.href = '#' + p.id;
-  a.textContent = p.querySelector('h3').textContent;
-  li.appendChild(a);
-  tocList.appendChild(li);
-});
 </script>
 
 
