@@ -20,7 +20,7 @@ html {
 }
 
 /* =========================
-   Header - Fixed Top Bar
+   Header - Fixed Top Bar 
 ========================= */
 .site-header {
   position: fixed;
@@ -29,39 +29,17 @@ html {
   width: 100%;
   height: var(--header-height);
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-end;        /* align navbar at bottom of header */
   justify-content: center;
 
   background-image: url('header.jpg');
-  background-size: cover;       /* image fills header, cropped if needed */
+  background-size: cover;       /* fills header, cropped if needed */
   background-position: center;
   background-repeat: no-repeat;
 
-  color: #F5F0E6;
   z-index: 1000;
   box-sizing: border-box;
-  padding: 0.5rem 1rem;
-}
-
-/* Logo & Flower */
-.site-header .logo {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.site-header .logo h1 {
-  margin-left: 0.7rem;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.9rem;
-  color: #F5F0E6;
-  white-space: nowrap;
-}
-
-.flower-icon {
-  width: 45px;
-  height: auto;
+  padding: 0 1rem 0.5rem 1rem; /* bottom padding for navbar spacing */
 }
 
 /* Navbar */
@@ -70,6 +48,9 @@ html {
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
+  background-color: rgba(0,0,0,0.3); /* optional semi-transparent background for readability */
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
 }
 
 .navbar a {
@@ -185,27 +166,18 @@ footer a:hover {
 ========================= */
 @media (max-width: 600px) {
   .site-header {
-    flex-direction: column;
     height: auto; 
-    padding: 1rem;
-  }
-
-  .site-header .logo h1 {
-    font-size: 1.3rem;
-    text-align: center;
-  }
-
-  .flower-icon {
-    width: 32px;
+    align-items: center; /* navbar centered */
+    padding: 0.5rem 1rem 0.5rem 1rem;
   }
 
   .navbar {
     flex-direction: column;
     gap: 0.5rem;
-    margin-top: 0.5rem;
+    padding: 0.3rem 0.5rem;
   }
 
   main {
-    padding-top: calc(var(--header-height) + 2rem); /* ensure main is below stacked header */
+    padding-top: calc(var(--header-height) + 1rem); /* adjust for stacked header */
   }
 }
