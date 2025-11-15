@@ -22,7 +22,7 @@ html {
 /* =========================
    Header - Fixed Top Bar 
 ========================= */
-.s.site-header {
+site-header {
   position: fixed;
   top: 0;
   left: 0;
