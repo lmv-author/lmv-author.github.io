@@ -22,24 +22,25 @@ html {
 /* =========================
    Header - Fixed Top Bar 
 ========================= */
-.site-header {
+.s.site-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: var(--header-height);
   display: flex;
-  align-items: flex-end;        /* align navbar at bottom of header */
+  align-items: center;
   justify-content: center;
 
   background-image: url('header.jpg');
-  background-size: cover;       /* fills header, cropped if needed */
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
+  color: #F5F0E6;
   z-index: 1000;
   box-sizing: border-box;
-  padding: 0 1rem 0.5rem 1rem; /* bottom padding for navbar spacing */
+  padding: 0 1rem;
 }
 
 /* Navbar */
@@ -48,9 +49,6 @@ html {
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  background-color: rgba(0,0,0,0.3); /* optional semi-transparent background for readability */
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
 }
 
 .navbar a {
@@ -164,20 +162,17 @@ footer a:hover {
 /* =========================
    Mobile Responsive
 ========================= */
-@media (max-width: 600px) {
-  .site-header {
-    height: auto; 
-    align-items: center; /* navbar centered */
-    padding: 0.5rem 1rem 0.5rem 1rem;
-  }
 
+@media (max-width: 600px) {
+site-header {
+    height: auto;
+    padding: 1rem;
+  }
   .navbar {
     flex-direction: column;
     gap: 0.5rem;
-    padding: 0.3rem 0.5rem;
   }
-
   main {
-    padding-top: calc(var(--header-height) / 2 + 1rem); /* smaller top space on mobile */
+    padding-top: calc(var(--header-height) / 2 + 1rem); /* adjust for mobile */
   }
 }
