@@ -44,6 +44,7 @@
     <button id="clearFilters">Clear</button>
   </section>
 
+  <!-- Table of contents -->
   <section class="toc">
     <h2>Table of Contents</h2>
     <ul id="toc-list">
@@ -191,7 +192,7 @@ window.addEventListener('load', ()=>{
 // Initial filter
 applyFilters();
 
-
+<!-- Table of contents -->
   const poems = document.querySelectorAll('.poem-item');
   const tocList = document.getElementById('toc-list');
   poems.forEach(p => {
@@ -203,8 +204,6 @@ applyFilters();
     tocList.appendChild(li);
   });
 
-
-  
 </script>
 
 </body>
