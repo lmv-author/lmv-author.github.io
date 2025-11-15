@@ -114,14 +114,13 @@ years.forEach(y=>{
 function applyFilters(){
   const year = yearSelect.value;
   const lang = langSelect.value;
-  poems.forEach(p=>{
+  tocList.innerHTML = ''; // clear TOC
+
+  shortstory.forEach(p=>{
     const show = (year==='all'||p.dataset.year===year) && (lang==='all'||p.dataset.lang===lang);
     p.style.display = show ? '' : 'none';
-  });
-  tocList.innerHTML = ''; // clear TOC
-}
 
-// Rebuild TOC only for visible short stories
+    // Rebuild TOC only for visible short stories
     if(show){
       const li = document.createElement('li');
       const a = document.createElement('a');
@@ -130,6 +129,8 @@ function applyFilters(){
       li.appendChild(a);
       tocList.appendChild(li);
     }
+  });
+}
 
 // Event listeners
 yearSelect.addEventListener('change', applyFilters);
@@ -155,6 +156,7 @@ window.addEventListener('load', ()=>{
 // Initial filter
 applyFilters();
 </script>
+
 
 </body>
 </html>
