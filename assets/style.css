@@ -167,6 +167,13 @@ footer a:hover {
 }
 
 /* =========================
+   Scroll behaviour
+========================= */
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================
    Responsive - Mobile
 ========================= */
 @media (max-width: 600px) {
