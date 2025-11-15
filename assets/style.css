@@ -81,7 +81,7 @@ main {
   padding: 2rem 1.5rem;
 
   /* PARCHMENT BACKGROUND (only for main area) */
-  background-image: url('assets/parchment.jpg');
+  background-image: url('parchment.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
