@@ -30,21 +30,13 @@
     <p>Welcome to the official website of Lara Mac Veeameroi — poet, writer, and thinker.</p>
   </section>
 
-  <section class="latest-poems">
-    <h2>Latest Poems</h2>
-    <ul>
-      <li><a href="poems.html#poem-2025-1">Test Poem 1</a></li>
-      <li><a href="poems.html#poem-2024-1">Test Poem 2</a></li>
-    </ul>
-  </section>
+<section class="latest-poems">
+  <h2>Latest Poems</h2>
+  <ul>
+    <li><a id="latest-poem-link" href="#">Loading latest poem…</a></li>
+  </ul>
+</section>
 
-  <section class="short-stories">
-    <h2>Latest Short Stories</h2>
-    <ul>
-      <li><a href="short-stories/story1.html">Story One</a></li>
-      <li><a href="short-stories/story2.html">Story Two</a></li>
-    </ul>
-  </section>
 </main>
 
 <!-- Footer -->
@@ -53,6 +45,32 @@
   <p>Follow Lara Mac Veeameroi on <a href="https://instagram.com/lmv.author" target="_blank">Instagram</a> | Contact: <a href="mailto:lmv.author@proton.me">lmv.author@proton.me</a></p>
   <p>The HTML and CSS code for this website was created with the assistance of ChatGPT 5.</p>
 </footer>
+
+<script>
+// Select all poems on poems.html
+fetch('poems.html')
+  .then(response => response.text())
+  .then(data => {
+    // Create a temporary DOM to parse poems.html
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(data, 'text/html');
+    const poems = Array.from(doc.querySelectorAll('.poem-item'));
+
+    if (poems.length > 0) {
+      // Sort by year descending, then by ID if needed
+      poems.sort((a, b) => b.dataset.year - a.dataset.year);
+
+      // Get most recent poem
+      const recent = poems[0];
+      const recentLink = document.querySelector('#latest-poem-link');
+      if (recentLink) {
+        recentLink.href = 'poems.html#' + recent.id;
+        recentLink.textContent = recent.querySelector('h3').textContent;
+      }
+    }
+  });
+</script>
+
 
 </body>
 </html>
