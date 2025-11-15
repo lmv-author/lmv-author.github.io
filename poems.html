@@ -144,7 +144,6 @@ E hai visto mille mosche bianche.
 About being different and finding companionship in beauty. Was among the firsts in a literary competition in Italy. </p>
     <button onclick="navigator.clipboard.writeText(window.location.href.split('#')[0] + '#poem-2009-1')">Copy Link</button>
     </article>
-    </article>
 
 
   </section>
@@ -174,12 +173,24 @@ years.forEach(y=>{
 });
 
 // Filter function
-function applyFilters(){
+  function applyFilters(){
   const year = yearSelect.value;
   const lang = langSelect.value;
-  poems.forEach(p=>{
+  tocList.innerHTML = ''; // clear TOC
+
+  poems.forEach(p => {
     const show = (year==='all'||p.dataset.year===year) && (lang==='all'||p.dataset.lang===lang);
     p.style.display = show ? '' : 'none';
+
+    // Rebuild TOC only for visible poems
+    if(show){
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + p.id;
+      a.textContent = p.querySelector('h3').textContent;
+      li.appendChild(a);
+      tocList.appendChild(li);
+    }
   });
 }
 
