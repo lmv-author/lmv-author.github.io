@@ -217,25 +217,31 @@ html {
    Responsive - Mobile
 ========================= */
 @media (max-width: 600px) {
-   main {
-    margin-top: 1rem;
+  .site-header {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
-   .site-header {
-     box-sizing: border-box;
-   }
+
   .site-header .logo h1 {
-    font-size: 1.3rem; /* smaller title */
+    font-size: 1.3rem;
   }
+
   .flower-icon {
-    width: 32px; /* smaller flower */
+    width: 32px;
   }
+
   .navbar {
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 0.5rem;
   }
-  body {
-    padding-top: 160px; /* increase to account for taller stacked header */
+
+  /* Push the content below the dynamic header */
+  main {
+    margin-top: calc(var(--header-height, 180px));
   }
 }
 
