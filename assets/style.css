@@ -33,7 +33,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url('assets/header.jpg'); /* your dark image */
+  background-image: url('header.jpg'); /* your dark image */
   background-size: cover;
   background-position: center;
   color: #F5F0E6; /* light text */
