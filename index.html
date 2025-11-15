@@ -38,7 +38,7 @@
 </section>
 
 <section class="latest-shortstories">
-  <h2>Latest Short Story</h2>
+  <h2>Latest Short Stories</h2>
   <ul id="latest-shortstories-list">
     <li>Loading latest short story…</li>
   </ul>
@@ -90,7 +90,7 @@ fetch('poems.html')
     const doc = parser.parseFromString(data, 'text/html');
     const shortstories = Array.from(doc.querySelectorAll('.shortstory-item'));
 
-    if (shortstories .length > 0) {
+    if (shortstories.length > 0) {
       // Sort by year descending
       shortstories.sort((a, b) => b.dataset.year - a.dataset.year);
 
