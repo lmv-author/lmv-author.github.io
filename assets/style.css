@@ -28,17 +28,21 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 180px;
+  height: 180px; /* header height */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url('header.jpg'); /* your dark image */
-  background-size: cover;
-  background-position: center;
-  color: #F5F0E6; /* light text */
+
+  background-image: url('assets/ebony.jpg');
+  background-size: cover;       /* image fills header, cropped if needed */
+  background-position: center;  /* center the image in the header */
+  background-repeat: no-repeat;
+
+  color: #F5F0E6;
   z-index: 1000;
 }
+
 
 /* Logo & Flower */
 .site-header .logo {
