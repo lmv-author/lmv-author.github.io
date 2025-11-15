@@ -1,5 +1,5 @@
 
-c<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -50,8 +50,8 @@ c<!DOCTYPE html>
   </section>
 
   <!-- Short stories list -->
-  <section class="poem-list">
- <!-- Add more poems here as <article> -->
+  <section class="shortstory-list">
+  <!-- Add more poems here as <article> -->
     
     <article class="shortstory-item" data-year="2015" data-lang="it">
       <h3 id="shortstory-1998-1">Cammello</h3>
@@ -64,7 +64,8 @@ Test
 <!-- 
       <h4>Genesis</h4>
       <p class="meta">
-  This poem is dedicated to Janosch, who left this life in a climbing accident in early 2015, while in vacation in Panama.</p> -->
+      ...</p>
+      -->
       <button onclick="navigator.clipboard.writeText(window.location.href.split('#')[0] + '#shortstory-1998-1')">Copy Link</button>  
     </article> 
 
@@ -80,7 +81,7 @@ Test
 
 <!-- Filtering script -->
 <script>
-const poems = Array.from(document.querySelectorAll('.shortstory-item'));
+const shortstory = Array.from(document.querySelectorAll('.shortstory-item'));
 const yearSelect = document.getElementById('yearFilter');
 const langSelect = document.getElementById('langFilter');
 const clearBtn = document.getElementById('clearFilters');
@@ -114,7 +115,6 @@ clearBtn.addEventListener('click', ()=>{
 });
 
 // Scroll to poem if URL has hash and center it
-<script>
 window.addEventListener('load', ()=>{
   if(location.hash){
     const el = document.querySelector(location.hash);
@@ -125,7 +125,6 @@ window.addEventListener('load', ()=>{
     }
   }
 });
-</script>
 
 // Initial filter
 applyFilters();
