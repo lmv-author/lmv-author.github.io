@@ -1,1 +1,136 @@
 
+c<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Short Stories — Lara Mac Veeameroi</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  
+<!-- Fixed Header -->
+<header class="site-header">
+  <div class="logo">
+    <img src="assets/flower.jpg" alt="flower" class="flower-icon">
+    <h1>Lara Mac Veeameroi – Author</h1>
+  </div>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="poems.html">Poems</a>
+    <a href="short-stories.html">Short Stories</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Main Content -->
+<main>
+  <section class="intro">
+    <p>Welcome to the short-stories archive. Use the filters to explore by year or language.</p>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters">
+    <label for="yearFilter">Year:</label>
+    <select id="yearFilter">
+      <option value="all">All</option>
+    </select>
+
+    <label for="langFilter">Language:</label>
+    <select id="langFilter">
+      <option value="all">All</option>
+      <option value="en">English</option>
+      <option value="it">Italian</option>
+      <option value="de">German</option>
+    </select>
+
+    <button id="clearFilters">Clear</button>
+  </section>
+
+  <!-- Short stories list -->
+  <section class="poem-list">
+ <!-- Add more poems here as <article> -->
+    
+    <article class="shortstory-item" data-year="2015" data-lang="it">
+      <h3 id="shortstory-1998-1">Cammello</h3>
+      <p class="meta">1998 • Italian <br>
+      test </p>
+      <pre>
+Test
+      </pre>
+
+<!-- 
+      <h4>Genesis</h4>
+      <p class="meta">
+  This poem is dedicated to Janosch, who left this life in a climbing accident in early 2015, while in vacation in Panama.</p> -->
+      <button onclick="navigator.clipboard.writeText(window.location.href.split('#')[0] + '#shortstory-1998-1')">Copy Link</button>  
+    </article> 
+
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <p>© Lara Mac Veeameroi. All rights reserved.</p>
+  <p>Follow Lara Mac Veeameroi on <a href="https://instagram.com/lmv.author" target="_blank">Instagram</a> | Contact: <a href="mailto:lmv.author@proton.me">lmv.author@proton.me</a></p>
+  <p>This site was created with the assistance of ChatGPT 5</p>
+</footer>
+
+<!-- Filtering script -->
+<script>
+const poems = Array.from(document.querySelectorAll('.shortstory-item'));
+const yearSelect = document.getElementById('yearFilter');
+const langSelect = document.getElementById('langFilter');
+const clearBtn = document.getElementById('clearFilters');
+
+// Populate year filter dynamically
+const years = [...new Set(shortstory.map(p => p.dataset.year))].sort((a,b)=>b-a);
+years.forEach(y=>{
+  const opt=document.createElement('option');
+  opt.value=y;
+  opt.textContent=y;
+  yearSelect.appendChild(opt);
+});
+
+// Filter function
+function applyFilters(){
+  const year = yearSelect.value;
+  const lang = langSelect.value;
+  poems.forEach(p=>{
+    const show = (year==='all'||p.dataset.year===year) && (lang==='all'||p.dataset.lang===lang);
+    p.style.display = show ? '' : 'none';
+  });
+}
+
+// Event listeners
+yearSelect.addEventListener('change', applyFilters);
+langSelect.addEventListener('change', applyFilters);
+clearBtn.addEventListener('click', ()=>{
+  yearSelect.value='all';
+  langSelect.value='all';
+  applyFilters();
+});
+
+// Scroll to poem if URL has hash and center it
+<script>
+window.addEventListener('load', ()=>{
+  if(location.hash){
+    const el = document.querySelector(location.hash);
+    if(el){
+      const offset = window.innerHeight / 2 - el.offsetHeight / 2;
+      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  }
+});
+</script>
+
+// Initial filter
+applyFilters();
+</script>
+
+</body>
+</html>
+
