@@ -80,14 +80,12 @@ main {
   margin: 2rem auto;
   padding: 2rem 1.5rem;
 
-  /* PARCHMENT BACKGROUND (only for main area) */
+  /* Parchment background */
   background-image: url('parchment.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: scroll;
-
-  /* Optional but recommended: gently “lift” the parchment */
+  background-repeat: repeat;          /* tiles the image */
+  background-size: auto;              /* keep original size */
+  background-position: top center;    /* optional: start from top center */
+  /* gently “lift” the parchment */
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.15);
 }
