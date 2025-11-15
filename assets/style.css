@@ -8,7 +8,7 @@
 ========================= */
 body {
   font-family: 'Merriweather', serif;
-  background-color: #f7f3e9;
+  background-color: #222;   /* charcoal black behind parchment */
   color: #222;
   line-height: 1.8;
   margin: 0;
@@ -79,7 +79,6 @@ main {
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.15);
   box-sizing: border-box;
-  background-color: #222;       /* charcoal black behind parchment */
 }
 
 main p {
