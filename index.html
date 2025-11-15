@@ -47,28 +47,29 @@
 </footer>
 
 <script>
-// Select all poems on poems.html
+// Fetch poems.html to find the most recent poem
 fetch('poems.html')
   .then(response => response.text())
   .then(data => {
-    // Create a temporary DOM to parse poems.html
     const parser = new DOMParser();
     const doc = parser.parseFromString(data, 'text/html');
     const poems = Array.from(doc.querySelectorAll('.poem-item'));
 
     if (poems.length > 0) {
-      // Sort by year descending, then by ID if needed
+      // Sort by year descending
       poems.sort((a, b) => b.dataset.year - a.dataset.year);
 
-      // Get most recent poem
       const recent = poems[0];
-      const recentLink = document.querySelector('#latest-poem-link');
+      const recentLink = document.getElementById('latest-poem-link');
+
       if (recentLink) {
+        // Update link href and text to show the title
         recentLink.href = 'poems.html#' + recent.id;
         recentLink.textContent = recent.querySelector('h3').textContent;
       }
     }
-  });
+  })
+  .catch(err => console.error('Error loading latest poem:', err));
 </script>
 
 
