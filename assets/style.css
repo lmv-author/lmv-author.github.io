@@ -22,22 +22,22 @@ html {
 /* =========================
    Header - Fixed Top Bar
 ========================= */
+
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--header-height);
+  height: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #1a1a1a;
-  color: #F5F0E6;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  background-image: url('assets/header.jpg'); /* your dark image */
+  background-size: cover;
+  background-position: center;
+  color: #F5F0E6; /* light text */
   z-index: 1000;
-  padding: 0.5rem 1rem;
-  box-sizing: border-box;
 }
 
 /* Logo & Flower */
