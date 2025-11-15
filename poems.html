@@ -114,5 +114,22 @@ function applyFilters(){
 
 // Event listeners
 yearSelect.addEventListener('change', applyFilters);
-langSelect.addEventListener('change', applyF
+langSelect.addEventListener('change', applyFilters);
+clearBtn.addEventListener('click', ()=>{
+  yearSelect.value='all';
+  langSelect.value='all';
+  applyFilters();
+});
+
+// Scroll to poem if URL has hash
+window.addEventListener('load', ()=>{
+  if(location.hash){
+    const el=document.querySelector(location.hash);
+    if(el) el.scrollIntoView({behavior:'smooth'});
+  }
+});
+
+// Initial filter
+applyFilters();
+
 
