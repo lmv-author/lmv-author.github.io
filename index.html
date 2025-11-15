@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!-- Header -->
+<!-- Fixed Header -->
 <header class="site-header">
   <h1>Lara Mac Veeameroi – Author</h1>
   <nav class="navbar">
@@ -20,26 +20,25 @@
   </nav>
 </header>
 
-<!-- Main Content-->
+<!-- Main Content -->
 <main>
   <section class="intro">
     <p>Welcome to the official website of Lara Mac Veeameroi — poet, writer, and thinker.</p>
   </section>
 
-<section class="latest-poems">
-  <h2>Latest Poems</h2>
-  <ul id="latest-poems-list">
-    <li>Loading latest poems…</li>
-  </ul>
-</section>
+  <section class="latest-poems">
+    <h2>Latest Poems</h2>
+    <ul id="latest-poems-list">
+      <li>Loading latest poems…</li>
+    </ul>
+  </section>
 
-<section class="latest-shortstories">
-  <h2>Latest Short Stories</h2>
-  <ul id="latest-shortstories-list">
-    <li>Loading latest short story…</li>
-  </ul>
-</section>
-
+  <section class="latest-shortstories">
+    <h2>Latest Short Stories</h2>
+    <ul id="latest-shortstories-list">
+      <li>Loading latest short story…</li>
+    </ul>
+  </section>
 </main>
 
 <!-- Footer -->
@@ -58,14 +57,11 @@ fetch('poems.html')
     const poems = Array.from(doc.querySelectorAll('.poem-item'));
 
     if (poems.length > 0) {
-      // Sort by year descending
       poems.sort((a, b) => b.dataset.year - a.dataset.year);
-
-      // Get the top 3
       const latest = poems.slice(0, 3);
 
       const ul = document.getElementById('latest-poems-list');
-      ul.innerHTML = ''; // clear placeholder
+      ul.innerHTML = '';
 
       latest.forEach(p => {
         const li = document.createElement('li');
@@ -79,7 +75,7 @@ fetch('poems.html')
   })
   .catch(err => console.error('Error loading latest poems:', err));
 
-  fetch('short-stories.html')
+fetch('short-stories.html')
   .then(response => response.text())
   .then(data => {
     const parser = new DOMParser();
@@ -87,14 +83,11 @@ fetch('poems.html')
     const shortstories = Array.from(doc.querySelectorAll('.shortstory-item'));
 
     if (shortstories.length > 0) {
-      // Sort by year descending
       shortstories.sort((a, b) => b.dataset.year - a.dataset.year);
-
-      // Get the top 3
       const latest = shortstories.slice(0, 3);
 
       const ul = document.getElementById('latest-shortstories-list');
-      ul.innerHTML = ''; // clear placeholder
+      ul.innerHTML = '';
 
       latest.forEach(p => {
         const li = document.createElement('li');
@@ -109,7 +102,6 @@ fetch('poems.html')
   .catch(err => console.error('Error loading latest short stories:', err));
 </script>
 
-
-
 </body>
 </html>
+
