@@ -24,9 +24,7 @@
 </header>
 
   
-<!-- Main Content 
-  https://www.deviantart.com/fantasystock/art/Seamless-Parchment-Texture-58517493
-  -->
+<!-- Main Content-->
 <main>
   <section class="intro">
     <p>Welcome to the official website of Lara Mac Veeameroi — poet, writer, and thinker.</p>
@@ -41,7 +39,7 @@
 
 <section class="latest-shortstories">
   <h2>Latest Short Story</h2>
-  <ul id="latest-shortstory-list">
+  <ul id="latest-shortstories-list">
     <li>Loading latest short story…</li>
   </ul>
 </section>
@@ -105,7 +103,7 @@ fetch('poems.html')
       latest.forEach(p => {
         const li = document.createElement('li');
         const a = document.createElement('a');
-        a.href = 'shortstories.html#' + p.id;
+        a.href = 'short-stories.html#' + p.id;
         a.textContent = p.querySelector('h3').textContent;
         li.appendChild(a);
         ul.appendChild(li);
