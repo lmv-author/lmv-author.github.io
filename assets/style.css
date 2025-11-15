@@ -2,16 +2,21 @@
 :root {
   --header-height: 180px;
 }
+
 /* =========================
    Base Styles
 ========================= */
 body {
   font-family: 'Merriweather', serif;
-  background-color: #f7f3e9; /* neutral fallback background */
-  color: #222222;
+  background-color: #f7f3e9;
+  color: #222;
   line-height: 1.8;
   margin: 0;
-  padding-top: 110px; /* space for fixed header */
+  padding-top: var(--header-height);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* =========================
@@ -22,16 +27,17 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 130px;
+  height: var(--header-height);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #1a1a1a; /* dark header */
-  color: #F5F0E6; /* light text */
+  background-color: #1a1a1a;
+  color: #F5F0E6;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   z-index: 1000;
   padding: 0.5rem 1rem;
+  box-sizing: border-box;
 }
 
 /* Logo & Flower */
@@ -52,16 +58,14 @@ body {
 .flower-icon {
   width: 45px;
   height: auto;
-  /* remove filter for color JPG */
 }
 
-/* Navbar - horizontal below logo */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  flex-wrap: wrap; /* wrap on small screens */
-  margin-bottom: 0.5rem; /* add space between navbar and bottom of header */
+  flex-wrap: wrap;
 }
 
 .navbar a {
@@ -83,20 +87,18 @@ main {
   max-width: 750px;
   margin: 2rem auto;
   padding: 2rem 1.5rem;
-
-  /* Parchment background */
   background-image: url('floral-old-paper-or-parchment-900x702.webp');
-  background-repeat: repeat;          /* tiles the image */
-  background-size: auto;              /* keep original size */
-  background-position: top center;    /* optional: start from top center */
-  /* gently “lift” the parchment */
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top center;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.15);
+  box-sizing: border-box;
 }
 
 main p {
   text-align: justify;
-  text-justify: inter-word; /* modern browsers handle spacing nicely */
+  text-justify: inter-word;
 }
 
 section {
@@ -118,28 +120,29 @@ ul li {
 }
 
 /* =========================
-   Poems
+   Poems & Short Stories
 ========================= */
-.poem-item {
-  background-color: rgba(255, 255, 255, 0.85); /* subtle parchment overlay */
+.poem-item, .shortstory-item {
+  background-color: rgba(255,255,255,0.85);
   border-left: 4px solid #B89B6D;
   padding: 1rem 1.5rem;
   margin-bottom: 1.5rem;
   border-radius: 8px;
 }
 
-.poem-item .meta {
+.poem-item .meta, .shortstory-item .meta {
   font-size: 0.9rem;
   color: #555;
   margin-bottom: 0.5rem;
 }
 
-.poem-item pre {
+.poem-item pre, .shortstory-item pre {
   white-space: pre-wrap;
   font-family: 'Merriweather', serif;
   margin: 0;
 }
-.poem-item button {
+
+.poem-item button, .shortstory-item button {
   margin-top: 0.5rem;
   padding: 0.3rem 0.6rem;
   font-size: 0.85rem;
@@ -150,44 +153,7 @@ ul li {
   cursor: pointer;
 }
 
-.poem-item button:hover {
-  background-color: #A07F52;
-}
-
-/* =========================
-   Short Stories
-========================= */
-.shortstory-item {
-  background-color: rgba(255, 255, 255, 0.85); /* subtle parchment overlay */
-  border-left: 4px solid #B89B6D;
-  padding: 1rem 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
-}
-
-.shortstory-item .meta {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 0.5rem;
-}
-
-.shortstory-item pre {
-  white-space: pre-wrap;
-  font-family: 'Merriweather', serif;
-  margin: 0;
-}
-.shortstory-item button {
-  margin-top: 0.5rem;
-  padding: 0.3rem 0.6rem;
-  font-size: 0.85rem;
-  background-color: #B89B6D;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.shortstory-item button:hover {
+.poem-item button:hover, .shortstory-item button:hover {
   background-color: #A07F52;
 }
 
@@ -211,22 +177,15 @@ footer a:hover {
 }
 
 /* =========================
-   Scroll behaviour
-========================= */
-html {
-  scroll-behavior: smooth;
-}
-
-/* =========================
-   Responsive - Mobile
+   Mobile Responsive
 ========================= */
 @media (max-width: 600px) {
-  .site-header {
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+  :root {
+    --header-height: 200px;
+  }
+
+  body {
+    padding-top: var(--header-height);
   }
 
   .site-header .logo h1 {
@@ -243,9 +202,7 @@ html {
     margin-bottom: 0.5rem;
   }
 
-  /* Push the content below the dynamic header */
   main {
-    margin-top: calc(var(--header-height, 180px));
+    margin-top: 0; /* body padding handles spacing */
   }
 }
-
