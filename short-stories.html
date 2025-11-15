@@ -93,11 +93,13 @@ Diarosca abitava a Bagdad. Per guadagnare soldi per la sua famiglia, composta da
 </footer>
 
 <!-- Filtering script -->
+
 <script>
 const shortstory = Array.from(document.querySelectorAll('.shortstory-item'));
 const yearSelect = document.getElementById('yearFilter');
 const langSelect = document.getElementById('langFilter');
 const clearBtn = document.getElementById('clearFilters');
+const tocList = document.getElementById('toc-list');
 
 // Populate year filter dynamically
 const years = [...new Set(shortstory.map(p => p.dataset.year))].sort((a,b)=>b-a);
@@ -116,7 +118,18 @@ function applyFilters(){
     const show = (year==='all'||p.dataset.year===year) && (lang==='all'||p.dataset.lang===lang);
     p.style.display = show ? '' : 'none';
   });
+  tocList.innerHTML = ''; // clear TOC
 }
+
+// Rebuild TOC only for visible short stories
+    if(show){
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + p.id;
+      a.textContent = p.querySelector('h3').textContent;
+      li.appendChild(a);
+      tocList.appendChild(li);
+    }
 
 // Event listeners
 yearSelect.addEventListener('change', applyFilters);
@@ -127,7 +140,7 @@ clearBtn.addEventListener('click', ()=>{
   applyFilters();
 });
 
-// Scroll to poem if URL has hash and center it
+// Scroll to short story if URL has hash and center it
 window.addEventListener('load', ()=>{
   if(location.hash){
     const el = document.querySelector(location.hash);
