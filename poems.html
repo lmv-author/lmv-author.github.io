@@ -142,12 +142,12 @@ Because otherwise, the gates would disappear.</p>
   <p>The HTML and CSS code for this website was created with the assistance of ChatGPT 5.</p>
 </footer>
 
-<!-- Filtering script -->
 <script>
 const poems = Array.from(document.querySelectorAll('.poem-item'));
 const yearSelect = document.getElementById('yearFilter');
 const langSelect = document.getElementById('langFilter');
 const clearBtn = document.getElementById('clearFilters');
+const tocList = document.getElementById('toc-list');
 
 // Populate year filter dynamically
 const years = [...new Set(poems.map(p => p.dataset.year))].sort((a,b)=>b-a);
@@ -192,19 +192,17 @@ window.addEventListener('load', ()=>{
 // Initial filter
 applyFilters();
 
-// Table of contents 
-  const poems = document.querySelectorAll('.poem-item');
-  const tocList = document.getElementById('toc-list');
-  poems.forEach(p => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = '#' + p.id;
-    a.textContent = p.querySelector('h3').textContent;
-    li.appendChild(a);
-    tocList.appendChild(li);
-  });
-
+// Build Table of Contents
+poems.forEach(p => {
+  const li = document.createElement('li');
+  const a = document.createElement('a');
+  a.href = '#' + p.id;
+  a.textContent = p.querySelector('h3').textContent;
+  li.appendChild(a);
+  tocList.appendChild(li);
+});
 </script>
+
 
 </body>
 </html>
