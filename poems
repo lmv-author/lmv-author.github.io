@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poems — Lara Mac Veeameroi</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- Fixed Header -->
+<header class="site-header">
+  <div class="logo">
+    <img src="assets/flower.jpg" alt="flower" class="flower-icon">
+    <h1>Lara Mac Veeameroi – Author</h1>
+  </div>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="poems.html">Poems</a>
+    <a href="short-stories/">Short Stories</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Main Content -->
+<main>
+  <section class="intro">
+    <p>Welcome to the poems archive. Use the filters to explore by year or language. Each poem can be shared individually.</p>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters">
+    <label for="yearFilter">Year:</label>
+    <select id="yearFilter">
+      <option value="all">All</option>
+    </select>
+
+    <label for="langFilter">Language:</label>
+    <select id="langFilter">
+      <option value="all">All</option>
+      <option value="en">English</option>
+      <option value="it">Italian</option>
+      <option value="de">German</option>
+    </select>
+
+    <button id="clearFilters">Clear</button>
+  </section>
+
+  <!-- Poems list -->
+  <section class="poem-list">
+    <article id="poem-2025-1" class="poem-item" data-year="2025" data-lang="en">
+      <h3>The Quiet House</h3>
+      <p class="meta">2025 • English</p>
+      <pre>
+Line one of the poem,
+line two of the poem.
+      </pre>
+    </article>
+
+    <article id="poem-2024-1" class="poem-item" data-year="2024" data-lang="it">
+      <h3>La strada di vento</h3>
+      <p class="meta">2024 • Italian</p>
+      <pre>
+Prima riga della poesia,
+seconda riga della poesia.
+      </pre>
+    </article>
+
+    <article id="poem-2023-1" class="poem-item" data-year="2023" data-lang="de">
+      <h3>Abendrot</h3>
+      <p class="meta">2023 • German</p>
+      <pre>
+Erste Zeile des Gedichts,
+zweite Zeile des Gedichts.
+      </pre>
+    </article>
+
+    <!-- Add more poems here as <article> -->
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <p>Follow Lara Mac Veeameroi on <a href="https://instagram.com/lmv.author" target="_blank">Instagram</a> | Contact: <a href="mailto:lmv.author@proton.me">lmv.author@proton.me</a></p>
+  <p>This site was created with the assistance of ChatGPT 5</p>
+</footer>
+
+<!-- Filtering script -->
+<script>
+const poems = Array.from(document.querySelectorAll('.poem-item'));
+const yearSelect = document.getElementById('yearFilter');
+const langSelect = document.getElementById('langFilter');
+const clearBtn = document.getElementById('clearFilters');
+
+// Populate year filter dynamically
+const years = [...new Set(poems.map(p => p.dataset.year))].sort((a,b)=>b-a);
+years.forEach(y=>{
+  const opt=document.createElement('option');
+  opt.value=y;
+  opt.textContent=y;
+  yearSelect.appendChild(opt);
+});
+
+// Filter function
+function applyFilters(){
+  const year = yearSelect.value;
+  const lang = langSelect.value;
+  poems.forEach(p=>{
+    const show = (year==='all'||p.dataset.year===year) && (lang==='all'||p.dataset.lang===lang);
+    p.style.display = show ? '' : 'none';
+  });
+}
+
+// Event listeners
+yearSelect.addEventListener('change', applyFilters);
+langSelect.addEventListener('change', applyF
 
