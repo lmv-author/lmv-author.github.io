@@ -178,6 +178,6 @@ footer a:hover {
   }
 
   main {
-    padding-top: calc(var(--header-height) + 1rem); /* adjust for stacked header */
+    padding-top: calc(var(--header-height) / 2 + 1rem); /* smaller top space on mobile */
   }
 }
