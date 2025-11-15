@@ -39,6 +39,13 @@
   </ul>
 </section>
 
+<section class="latest-shortstories">
+  <h2>Latest Short Story</h2>
+  <ul id="latest-shortstory-list">
+    <li>Loading latest short story…</li>
+  </ul>
+</section>
+
 </main>
 
 <!-- Footer -->
@@ -77,6 +84,35 @@ fetch('poems.html')
     }
   })
   .catch(err => console.error('Error loading latest poems:', err));
+
+  fetch('short-stories.html')
+  .then(response => response.text())
+  .then(data => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(data, 'text/html');
+    const shortstories = Array.from(doc.querySelectorAll('.shortstory-item'));
+
+    if (shortstories .length > 0) {
+      // Sort by year descending
+      shortstories.sort((a, b) => b.dataset.year - a.dataset.year);
+
+      // Get the top 3
+      const latest = shortstories.slice(0, 3);
+
+      const ul = document.getElementById('latest-shortstories-list');
+      ul.innerHTML = ''; // clear placeholder
+
+      latest.forEach(p => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = 'shortstories.html#' + p.id;
+        a.textContent = p.querySelector('h3').textContent;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+    }
+  })
+  .catch(err => console.error('Error loading latest short stories:', err));
 </script>
 
 
