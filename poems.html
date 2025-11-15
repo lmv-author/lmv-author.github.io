@@ -172,13 +172,19 @@ clearBtn.addEventListener('click', ()=>{
   applyFilters();
 });
 
-// Scroll to poem if URL has hash
+// Scroll to poem if URL has hash and center it
+<script>
 window.addEventListener('load', ()=>{
   if(location.hash){
-    const el=document.querySelector(location.hash);
-    if(el) el.scrollIntoView({behavior:'smooth'});
+    const el = document.querySelector(location.hash);
+    if(el){
+      const offset = window.innerHeight / 2 - el.offsetHeight / 2;
+      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
   }
 });
+</script>
 
 // Initial filter
 applyFilters();
