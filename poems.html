@@ -44,6 +44,13 @@
     <button id="clearFilters">Clear</button>
   </section>
 
+  <section class="toc">
+    <h2>Table of Contents</h2>
+    <ul id="toc-list">
+    <!-- JS will fill this -->
+    </ul>
+  </section>
+
   <!-- Poems list -->
   <section class="poem-list">
  <!-- Add more poems here as <article> -->
@@ -183,6 +190,21 @@ window.addEventListener('load', ()=>{
 
 // Initial filter
 applyFilters();
+
+
+  const poems = document.querySelectorAll('.poem-item');
+  const tocList = document.getElementById('toc-list');
+  poems.forEach(p => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#' + p.id;
+    a.textContent = p.querySelector('h3').textContent;
+    li.appendChild(a);
+    tocList.appendChild(li);
+  });
+
+
+  
 </script>
 
 </body>
