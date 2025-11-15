@@ -90,6 +90,11 @@ main {
   box-shadow: 0 0 15px rgba(0,0,0,0.15);
 }
 
+main p {
+  text-align: justify;
+  text-justify: inter-word; /* modern browsers handle spacing nicely */
+}
+
 section {
   margin-bottom: 3rem;
 }
